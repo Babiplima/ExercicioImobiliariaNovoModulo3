@@ -6,6 +6,7 @@ import java.util.List;
 public class CadastroImovel {
     private List<Imovel> imoveis = new ArrayList<>();
 
+
     //Métodos construtores
 
     public CadastroImovel() {
@@ -36,6 +37,7 @@ public class CadastroImovel {
         }
         //Método de mostrar imóveis
         for (Imovel referencia : imoveis) {
+            System.out.println(referencia.getMoradores());
             System.out.println(referencia.toString());
         }
     }
