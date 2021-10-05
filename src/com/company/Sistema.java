@@ -4,65 +4,83 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+
 public class Sistema {
+
+    //Método leitor de dados
+
+    private static Scanner capturarDados(String mensagem) {
+        System.out.println(mensagem);
+        return new Scanner(System.in);
+    }
 
     //Listas necessárias para o sistema
     static List<Moradores> listaDeMoradores = new ArrayList<>();
     static ImoveisCadastrado imobiliaria = new ImoveisCadastrado() {
     };
 
-
-    //Método leitor de dados
-    private static Scanner leitor(String mensagem) {
-        System.out.println(mensagem);
-        return new Scanner(System.in);
-    }
-
     //Menu inicial
-    public static int Menuinicial() {
+    public static int menuInicial() {
         System.out.println("Seja muito bem vindo ao sistema imobiliário");
         System.out.println("Por favor, digite 1 para cadastrar um novo imóvel ");
         System.out.println("Por favor, digite 2 para exibir os imóveis ");
         System.out.println("Por favor, digite 3 para excluir um morador ");
-        int escolhido = leitor("Por favor, caso deseje sair digite 4 ").nextInt();
-        return escolhido;
-    }
-    //Entrada de dados Funcionário
-
-    public static Funcionario novoFuncionario() {
-        String leitorFuncionario = leitor("Digite o nome do funcionário responsável  ").nextLine();
-        Funcionario novoFuncionario = new Funcionario(leitorFuncionario);
-        return novoFuncionario;
+        System.out.println("Por favor 4 , caso deseje sair digite 4 ");
+        return menuInicial();
     }
 
-    //Entrada de dados Morador através de métodos
+    //Entrada de dados
 
     public static Moradores novoMorador() {
-        String leitorMoradores = leitor("Digite o nome do morador ").nextLine();
-        String leitorCPF = leitor("Digite o CPF ").nextLine();
+        String nome = capturarDados("Digite o nome do morador ").nextLine();
+        String cpf = capturarDados("Digite o seu CPF").nextLine();
+        String telefone = capturarDados("Digite o seu telefone ").nextLine();
+        String endereço = capturarDados("Digite o endereço").nextLine();
+        String aluguel = capturarDados("Digite o valor do aluguel").nextLine();
+        Moradores moradores = new Moradores();
+        return novoMorador();
+    }
+    //Método cadastrar funcionário
 
-        Moradores novoMorador = new Moradores();
-        return novoMorador;
+    public static Funcionario cadastrarFuncionario() {
+        String nome = capturarDados("Digite seu nome: ").nextLine();
+        Funcionario funcionario = new Funcionario(nome);
+        return funcionario;
     }
 
-    public static double aluguel() {
-        double leitorAluguel = leitor("Qual é o valor do aluguel?").nextDouble();
-        return leitorAluguel;
 
-    }
+    //Método executar
 
-    public static String endereco() {
-        String leitorEndereco = leitor("Qual é o endereço do imóvel?").nextLine();
-        return leitorEndereco;
+    public static void executar() {
+        boolean menu = true;
+        Imobiliaria imobiliaria = new Imobiliaria();
 
-        //Método cadastrar morador
+        while (menu) {
+            menuInicial();
+            int opcaoDoUsuario = capturarDados("Digite a opção desejada: ").nextInt();
+            switch (opcaoDoUsuario) {
+                case 1:
+                    Imovel imovel = cadastrarFuncionario();
+                    Funcionario funcionario = cadastrarFuncionario();
+                    imovel.setFuncionarioResponsavel(funcionario);
+            }
+            int qtdMoradores = capturarDados("Digite a quantidade de moradores: ").nextInt();
+            for (int i = 0; i < qtdMoradores; i++) {
+                Morador morador = cadastrarMoradores();
+                imovel.adicionarMorador(morador);
+            }
+            imobiliaria.adicionarImovel(imovel);
+            break;
+            case 2:
+                System.out.println(imobiliaria);
+                break;
+            case 3:
+                System.out.println("Muito obrigada, volte sempre");
+                menu = false;
+                break;
 
-        public static Imovel cadastrarImovel() {
-            Imovel novoImovel = new Imovel();
-            String leitorMoradores = leitor("Qual é o nome do morador ? ").nextLine();
-            String leitorCPF = leitor("Qual é o númer/ do CPF: ").nextLine();
 
-            return novoImovel;
         }
+
     }
 }

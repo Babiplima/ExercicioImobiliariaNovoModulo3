@@ -18,7 +18,4 @@ public class Moradores extends Pessoa {
     super(nome,cpf);
 
     }
-
-
-
 }

@@ -1,6 +1,6 @@
 package com.company;
 
-public class Pessoa {
+public abstract class Pessoa {
     //Atributos
 
     private String nome;
@@ -8,12 +8,16 @@ public class Pessoa {
 
     //Métodos construtores
 
-    public Pessoa(String nome){
+    public  Pessoa(String nome){
 
     }
     public Pessoa(String nome, String cpf) {
         this.nome = nome;
         this.cpf = cpf;
+    }
+
+    public Pessoa() {
+
     }
 
 
