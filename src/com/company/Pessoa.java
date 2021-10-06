@@ -1,6 +1,6 @@
 package com.company;
 
-public abstract class Pessoa {
+public class Pessoa {
     //Atributos
 
     private String nome;
@@ -54,4 +54,6 @@ public abstract class Pessoa {
         dados.append("\t CPF" + getCpf() + "\t");
         return dados.toString();
     }
+
+
 }

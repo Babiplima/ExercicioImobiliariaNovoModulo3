@@ -18,7 +18,7 @@ public class Imovel {
     public Imovel(String endereco, double valorDoAluguel) {
         this.endereco = endereco;
         this.valorDoAluguel = valorDoAluguel;
-       }
+    }
     //Métodos Getters e Setters
 
     public String getEndereco() {
@@ -51,6 +51,12 @@ public class Imovel {
 
     public void setMoradores(List<Moradores> moradores) {
         this.moradores = moradores;
+    }
+
+    //Método adicionar morador
+
+    public void adicionarMoradores(Moradores morador){
+        moradores.add(morador);
     }
     //Método toString
 

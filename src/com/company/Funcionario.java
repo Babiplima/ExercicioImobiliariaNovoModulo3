@@ -15,7 +15,6 @@ public class Funcionario extends Pessoa {
     @Override
     public String toString() {
         StringBuilder exibir = new StringBuilder();
-        exibir.append("\n========Corretor========');
         exibir.append("\n========================");
         return exibir.toString();
     }
