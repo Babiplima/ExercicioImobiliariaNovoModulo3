@@ -52,6 +52,18 @@ public class Imovel {
     public void setMoradores(List<Moradores> moradores) {
         this.moradores = moradores;
     }
+    //Método toString
+
+    @Override
+    public String toString(){
+        StringBuilder exibir = new StringBuilder();
+        exibir.append("\nEndereço: "+ endereco);
+        exibir.append("\nValor do Aluguel: "+ valorDoAluguel);
+        exibir.append("\n Funcionário Responsável: "+funcionarioResponsavel);
+        exibir.append("\n=========Moradores=========="+moradores);
+        return exibir.toString();
+    }
+
 }
 
 
