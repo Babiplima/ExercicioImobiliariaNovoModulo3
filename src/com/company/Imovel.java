@@ -12,8 +12,50 @@ public class Imovel {
     private Funcionario funcionarioResponsavel;
     private List<Moradores> moradores = new ArrayList<>();
 
+//Métodos construtores
 
 
+    public Imovel(String endereco, double valorDoAluguel) {
+        this.endereco = endereco;
+        this.valorDoAluguel = valorDoAluguel;
+       }
+    //Métodos Getters e Setters
+
+    public String getEndereco() {
+        return endereco;
     }
+
+    public void setEndereco(String endereco) {
+        this.endereco = endereco;
+    }
+
+    public double getValorDoAluguel() {
+        return valorDoAluguel;
+    }
+
+    public void setValorDoAluguel(double valorDoAluguel) {
+        this.valorDoAluguel = valorDoAluguel;
+    }
+
+    public Funcionario getFuncionarioResponsavel() {
+        return funcionarioResponsavel;
+    }
+
+    public void setFuncionarioResponsavel(Funcionario funcionarioResponsavel) {
+        this.funcionarioResponsavel = funcionarioResponsavel;
+    }
+
+    public List<Moradores> getMoradores() {
+        return moradores;
+    }
+
+    public void setMoradores(List<Moradores> moradores) {
+        this.moradores = moradores;
+    }
+}
+
+
+
+
 
 

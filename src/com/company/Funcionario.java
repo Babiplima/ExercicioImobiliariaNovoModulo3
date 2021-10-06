@@ -1,16 +1,22 @@
 package com.company;
 
-public class Funcionario extends Pessoa{
+public class Funcionario extends Pessoa {
 
     //Método construtor
 
-    public Funcionario(){
-        super();
-
+    public Funcionario() {
+    }
+    public Funcionario(String nome, String cpf) {
+        super(nome, cpf);
     }
 
-    public Funcionario(String nome){
-        super(nome);
-    }
+    //Método toString
 
+    @Override
+    public String toString() {
+        StringBuilder exibir = new StringBuilder();
+        exibir.append("\n========Corretor========');
+        exibir.append("\n========================");
+        return exibir.toString();
+    }
 }

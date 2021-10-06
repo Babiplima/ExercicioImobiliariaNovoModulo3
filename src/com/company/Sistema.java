@@ -47,40 +47,38 @@ public class Sistema {
         Funcionario funcionario = new Funcionario(nome);
         return funcionario;
     }
-
-
     //Método executar
 
-    public static void executar() {
-        boolean menu = true;
-        Imobiliaria imobiliaria = new Imobiliaria();
+   public static void executar() {
+       boolean menu = true;
 
-        while (menu) {
-            menuInicial();
-            int opcaoDoUsuario = capturarDados("Digite a opção desejada: ").nextInt();
-            switch (opcaoDoUsuario) {
-                case 1:
-                    Imovel imovel = cadastrarFuncionario();
-                    Funcionario funcionario = cadastrarFuncionario();
-                    imovel.setFuncionarioResponsavel(funcionario);
-            }
-            int qtdMoradores = capturarDados("Digite a quantidade de moradores: ").nextInt();
-            for (int i = 0; i < qtdMoradores; i++) {
-                Morador morador = cadastrarMoradores();
-                imovel.adicionarMorador(morador);
-            }
-            imobiliaria.adicionarImovel(imovel);
-            break;
-            case 2:
-                System.out.println(imobiliaria);
-                break;
-            case 3:
-                System.out.println("Muito obrigada, volte sempre");
-                menu = false;
-                break;
+       Imobiliaria imobiliaria = new Imobiliaria();
+
+       while (menu) {
+           menuInicial();
+           int opcaoDoUsuario = capturarDados("Digite a opção desejada: ").nextInt();
+           switch (opcaoDoUsuario) {
+               case 1:
+
+           }
+           int qtdMoradores = capturarDados("Digite a quantidade de moradores: ").nextInt();
+           for (int i = 0; i < qtdMoradores; i++) {
+               Morador morador = cadastrarMoradores();
+               imovel.adicionarMorador(morador);
+           }
+           imobiliaria.adicionarImovel(imovel);
+           break;
+           case 2:
+               System.out.println(imobiliaria);
+               break;
+           case 3:
+               System.out.println("Muito obrigada, volte sempre");
+               menu = false;
+               break;
 
 
-        }
+       }
+   }
 
-    }
-}
+    //}
+//}
